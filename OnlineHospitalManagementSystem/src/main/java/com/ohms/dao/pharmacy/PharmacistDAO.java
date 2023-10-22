@@ -4,36 +4,41 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import com.ohms.model.pharmacy.*;
 import com.ohms.util.MySQLConnection;
 
 public class PharmacistDAO {
 
-
-	public PharmacistDAO() {
-		super();
-	}
-
-	
-	
-	public boolean isValidPharmacist(String username, String password) {
-        String sql = "SELECT 1 FROM User u "
-                + "INNER JOIN Pharmacist p ON u.id = p.PharmacistID "
-                + "WHERE u.username = ? AND u.password = ?";
+    public Pharmacist getPharmacist(String username, String password) {
         Connection connection = MySQLConnection.getConnection();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        Pharmacist pharmacist = null;
 
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, username);
-            statement.setString(2, password);
+        try {
+            String sql = "SELECT * FROM user WHERE Username=? AND Password=?";
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+            resultSet = preparedStatement.executeQuery();
 
-            try (ResultSet result = statement.executeQuery()) {
-                return result.next(); // If a row is returned, the credentials are valid
+            if (resultSet.next()) {
+                pharmacist = new Pharmacist();
+                pharmacist.setId(resultSet.getInt("id"));
+                pharmacist.setUsername(resultSet.getString("username"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (resultSet != null) resultSet.close();
+                if (preparedStatement != null) preparedStatement.close();
+                if (connection != null) connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
 
-        return false; // Invalid credentials
+        return pharmacist;
     }
-
 }

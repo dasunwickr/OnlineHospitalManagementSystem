@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dashboard</title>
+    <title>Pharmacist Dashboard</title>
 </head>
 <body>
-    <h1>Welcome to the Dashboard!</h1>
+    <h1>Welcome to the Pharmacist Dashboard</h1>
     <!-- Add content for the dashboard here -->
 </body>
 </html>

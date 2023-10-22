@@ -6,7 +6,8 @@
     <title>Login Error</title>
 </head>
 <body>
-    <h2>Invalid username or password. Please try again.</h2>
-    <a href="login.jsp">Back to Login</a>
+    <h1>Login Error</h1>
+    <p>Sorry, your login attempt was not successful. Please check your username and password.</p>
+    <a href="LoginPharmacist.jsp">Go back to login</a>
 </body>
 </html>

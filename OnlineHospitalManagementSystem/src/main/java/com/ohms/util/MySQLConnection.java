@@ -9,12 +9,12 @@ public class MySQLConnection {
     public static Connection getConnection() {
         Connection connection = null;
 
-        String jdbcURL = "jdbc:mysql://localhost:3306/healthcare_system"; // Replace with your database URL
-        String username = "root"; // Replace with your MySQL username
-        String password = "1234"; // Replace with your MySQL password
+        String jdbcURL = "jdbc:mysql://localhost:3306/healthcare_system"; 
+        String username = "root"; 
+        String password = "1234"; 
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // Load the MySQL JDBC driver (optional for Java 8+)
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
             connection = DriverManager.getConnection(jdbcURL, username, password);
             if (connection != null) {
                 System.out.println("Connected to the database");

@@ -1,36 +1,39 @@
-package com.ohms.dao.pharmacy;  // Replace with your appropriate package
+package com.ohms.dao.pharmacy;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.ohms.model.pharmacy.Pharmacist;  // Replace with your actual model class
+import com.ohms.util.MySQLConnection;
 
 public class PharmacistDAO {
-    private Connection connection;  // You should have a database connection here
 
-    public PharmacistDAO(Connection connection) {
-        this.connection = connection;
-    }
 
-    public Pharmacist getPharmacistByUsername(String username) {
-        Pharmacist pharmacist = null;
-        String query = "SELECT username, password FROM users WHERE username = ?";
-        
-        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            preparedStatement.setString(1, username);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            
-            if (resultSet.next()) {
-                String dbUsername = resultSet.getString("username");
-                String dbPassword = resultSet.getString("password");
-                pharmacist = new Pharmacist(dbUsername, dbPassword);
+	public PharmacistDAO() {
+		super();
+	}
+
+	
+	
+	public boolean isValidPharmacist(String username, String password) {
+        String sql = "SELECT 1 FROM User u "
+                + "INNER JOIN Pharmacist p ON u.id = p.PharmacistID "
+                + "WHERE u.username = ? AND u.password = ?";
+        Connection connection = MySQLConnection.getConnection();
+
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, username);
+            statement.setString(2, password);
+
+            try (ResultSet result = statement.executeQuery()) {
+                return result.next(); // If a row is returned, the credentials are valid
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
-        return pharmacist;
+
+        return false; // Invalid credentials
     }
+
 }

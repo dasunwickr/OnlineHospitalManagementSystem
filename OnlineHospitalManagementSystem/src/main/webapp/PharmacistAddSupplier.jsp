@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +35,7 @@
     </div>
     
     <div class="supplier-form">
-        <form action="process_supplier.php" method="POST">
+        <form action="AddSupplierController" method="POST">
             <label for="supplierName">Supplier Name:</label>
             <input type="text" id="supplierName" name="supplierName" required>
             

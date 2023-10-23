@@ -1,0 +1,65 @@
+/* Reset some default styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Style for the navigation bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #136a8a;
+    background: -webkit-linear-gradient(to right, #267871, #136a8a);
+    background: linear-gradient(to right, #267871, #136a8a);
+    color: white;
+    padding: 15px 0; /* Increase the height of the navbar */
+}
+
+/* Style for the links */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 30px; /* Add more space between links */
+}
+
+/* Style for the Font Awesome icon */
+.fa-medkit {
+    font-size: 24px;
+    margin-right: 10px;
+    color: white;
+    padding: 5px; /* Add more padding to the icon */
+    padding-left: 20px;
+}
+
+/* Style to remove link color and underline */
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Style for the content container */
+.container {
+    flex-grow: 1;
+    overflow-y: auto; /* Add vertical scroll for the content */
+    padding: 20px;
+}
+
+/* Style for the footer */
+.footer {
+    background: #136a8a;
+    background: -webkit-linear-gradient(to right, #267871, #136a8a);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}

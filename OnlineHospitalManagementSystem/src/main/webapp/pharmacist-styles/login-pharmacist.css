@@ -1,0 +1,146 @@
+body {
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    font-family: Assistant, sans-serif;
+    display: flex;
+    min-height: 90vh;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.login {
+    color: white;
+    background: #136a8a;
+    background: -webkit-linear-gradient(to right, #267871, #136a8a);
+    background: linear-gradient(to right, #267871, #136a8a);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2), 0px 10px 20px rgba(0, 0, 0, 0.3), 0px 30px 60px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 50px;
+    width: 300px; /* Set a fixed width or adjust as needed */
+}
+
+.login .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .head .company {
+    font-size: 2.2em;
+}
+
+.login .msg {
+    text-align: center;
+}
+
+.login .form input[type="text"].text,
+.login .form input[type="password"].password {
+    border: none;
+    background: none;
+    box-shadow: 0px 2px 0px 0px white;
+    width: 100%;
+    color: white;
+    font-size: 1em;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.login .form .text::placeholder,
+.login .form .password::placeholder {
+    color: #D3D3D3;
+}
+
+.login .form .btn-login {
+    background: none;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0px 0px 0px 2px white;
+    border-radius: 3px;
+    width: 100%; /* Set the width to 100% to match the input fields */
+    color: white;
+    font-size: 1em;
+    outline: none;
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 10px 15px; /* Add padding here, adjust as needed */
+    transition: 0.5s;
+}
+
+.login .form .btn-login:hover {
+    background: white;
+    color: dimgray;
+    transition: 0.5s;
+}
+
+.login .forgot {
+    text-decoration: none;
+    color: white;
+    float: right;
+}
+
+.login .form .remember-me-label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: white;
+    font-size: 0.9em;
+}
+
+.login .form .remember-me {
+    margin-right: 5px; /* Adjust the spacing between the checkbox and label */
+}
+
+.login .form .remember-me input[type="checkbox"] {
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px; /* Set the width and height of the custom checkbox */
+    height: 16px;
+    border: 2px solid white; /* Add a border */
+    border-radius: 3px; /* Rounded corners */
+    margin-right: 5px;
+    position: relative;
+}
+
+.login .form .remember-me input[type="checkbox"]:checked::before {
+    content: "\2713"; /* Checkmark character (✓) */
+    font-size: 14px; /* Adjust the checkmark size */
+    position: absolute;
+    top: -3px;
+    left: 1px;
+    color: white; /* Checkmark color */
+}
+
+.login .form .remember-me-label:hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+footer {
+    position: absolute;
+    color: #136a8a;
+    bottom: 10px;
+    padding-left: 20px;
+}
+
+footer p {
+    display: inline;
+}
+
+footer a {
+    color: green;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+

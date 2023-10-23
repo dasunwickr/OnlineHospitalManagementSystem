@@ -24,7 +24,7 @@ public class LoginPharmacistController extends HttpServlet {
         if (pharmacist != null) {
             // Login successful
             // You can set session attributes here
-            response.sendRedirect("DashboardPharmacist.jsp"); // Redirect to the dashboard
+            response.sendRedirect("PharmacistDashboard.jsp"); // Redirect to the dashboard
         } else {
             // Login failed
             response.sendRedirect("LoginError.jsp"); // Redirect to an error page

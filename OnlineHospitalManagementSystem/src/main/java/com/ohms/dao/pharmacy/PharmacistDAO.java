@@ -16,7 +16,7 @@ public class PharmacistDAO {
         Pharmacist pharmacist = null;
 
         try {
-            String sql = "SELECT * FROM user WHERE Username=? AND Password=?";
+            String sql = "SELECT * FROM user WHERE username=? AND password=?";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, username);
             preparedStatement.setString(2, password);
